@@ -8,7 +8,7 @@ METRIC = 'euclidean'
 
 # read training and test data
 train = pd.read_csv('online_shoppers_intention_train.csv')
-test = pd.read_csv('online_shoppers_intention_train.csv')
+test = pd.read_csv('online_shoppers_intention_test.csv')
 
 # select the last column as label (y)
 X_train = train.iloc[:, :-1].values
@@ -16,7 +16,7 @@ y_train = train.iloc[:, -1].values
 X_test = test.iloc[:, :-1].values
 y_test = test.iloc[:, -1].values
 
-# create classifier and fit to the training set
+# create K_classifier and fit to the training set
 classifier = neighbors.KNeighborsClassifier(n_neighbors=MAX_NUM_NEIGHBORS, weights=WEIGHTS, metric=METRIC)
 classifier.fit(X_train, y_train)
 
