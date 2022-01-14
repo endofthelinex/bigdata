@@ -104,5 +104,8 @@ grid_search('KNeighbors Grid Search', K_classifier4, param_grid, train, test)
 # Random Forest Grid Search 4.2
 R_classifier2 = ensemble.RandomForestClassifier()
 # https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74
-param_grid = {'n_estimators': [], 'max_features': [], 'max_depth': [], 'min_samples_leaf': [], 'bootstrap': []}
+param_grid = {'n_estimators': [50, 75, 100, 200, 300, 400, 500, 600, 700, 800, 900],
+              'max_features': ['auto', 'int'],
+              'max_depth': [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, None], 'min_samples_leaf': [1, 2, 4],
+              'bootstrap': [True, False]}
 grid_search('Random Forest Grid Search', R_classifier2, param_grid, train, test)
